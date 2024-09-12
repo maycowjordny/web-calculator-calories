@@ -1,0 +1,7 @@
+enum ActivityEnum {
+  SEDENTARY = "SEDENTARY",
+  LIGTH = "LIGTH",
+  MODERATE = "MODERATE",
+  HAVY = "MODERATE",
+  ATHLETE = "ATHLETE",
+}
