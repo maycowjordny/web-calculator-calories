@@ -10,8 +10,20 @@ config.autoAddCss = false;
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Calculadora de calorias",
-  description: "Calcule seu metabolismo basal",
+  title:
+    "Calculadora de Calorias - Ajuste Sua Dieta para Perder ou Ganhar Peso",
+  description:
+    "Use nossa calculadora de calorias para calcular seu metabolismo basal, ajustar sua dieta e atingir suas metas de perda ou ganho de peso com ingestão ideal de macronutrientes.",
+  keywords: [
+    "calculadora de calorias",
+    "perda de peso",
+    "ganho de peso",
+    "metabolismo basal",
+    "dieta",
+    "nutrição",
+    "macronutrientes",
+    "ajuste de dieta",
+  ],
 };
 
 export default function RootLayout({

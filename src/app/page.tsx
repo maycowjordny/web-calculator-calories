@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoadingButton } from "@mui/lab";
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Alert, Box, Card, Container, Typography } from "@mui/material";
 import { useState } from "react";
 import CountUp from "react-countup";
 import { useForm } from "react-hook-form";
@@ -155,6 +155,7 @@ export default function Home() {
               kcal
             </Typography>
           </Card>
+
           <Box
             display="grid"
             gap={2}
@@ -186,6 +187,77 @@ export default function Home() {
               title={`Dieta ${index + 1}`}
             />
           ))}
+          <Alert severity="info">
+            <Typography variant="body1" mb={1}>
+              Se você inserir um peso abaixo do seu peso atual na meta de peso,
+              a calculadora irá reduzir 20% das calorias diárias para promover a
+              perda de peso.
+            </Typography>
+            <Typography variant="body1" mb={1}>
+              Se sua meta de peso for maior, adicionaremos 300 calorias à sua
+              dieta para facilitar o ganho de peso.
+            </Typography>
+            <Typography variant="subtitle1" mt={2}>
+              Estagnação de peso:
+            </Typography>
+            <Typography variant="body2" mb={1}>
+              Se após 3 semanas o seu peso estagnar (não perder ou ganhar peso),
+              recomendamos ajustar 200 calorias:
+            </Typography>
+            <Typography variant="body2" mb={1}>
+              Ganhar peso: Aumente 200 calorias, principalmente de carboidratos.
+            </Typography>
+            <Typography variant="body2" mb={1}>
+              Perder peso: Reduza 200 calorias, retirando-as dos carboidratos.
+            </Typography>
+            <Typography variant="subtitle1" mt={2}>
+              Manutenção de Massa Muscular:
+            </Typography>
+            <Typography variant="body1">
+              Para proteger seus músculos, mantenha sua ingestão de proteínas em
+              2x o seu peso atual. Nossa calculadora já estima a quantidade
+              ideal de proteínas, carboidratos e gorduras com base em suas
+              necessidades.
+            </Typography>
+          </Alert>
+          <Box>
+            <Typography
+              variant="h4"
+              fontWeight={500}
+              textAlign="center"
+              color="#4f9a94"
+              mb={2}
+            >
+              FAQ - Fit Caloria
+            </Typography>
+            <CustomAccordion
+              title="O que é a Fit Caloria?"
+              content="A Fit Caloria é uma ferramenta online que ajuda você a calcular suas necessidades diárias de calorias e macronutrientes (proteínas, carboidratos e gorduras) com base nas suas informações físicas e no seu objetivo de peso, seja para emagrecer, ganhar massa muscular ou manter seu peso atual."
+            />
+            <CustomAccordion
+              title="Como funciona a calculadora de calorias?"
+              content="Nossa calculadora utiliza dados como idade, altura, peso, sexo, nível de atividade física e sua meta de peso para calcular o total de calorias que você precisa consumir diariamente. Se sua meta for perder peso, a calculadora ajustará automaticamente as calorias para promover o emagrecimento. Se sua meta for ganhar peso, adicionaremos calorias extras para auxiliar no ganho muscular."
+            />
+            <CustomAccordion
+              title=" Quais são os macronutrientes calculados?"
+              content="Nós calculamos três macronutrientes essenciais:
+
+Proteínas: Estimamos a quantidade ideal de proteínas com base no seu peso e objetivo. Recomendamos manter a ingestão de proteínas em 2x o seu peso corporal.
+Carboidratos: Ajustamos a quantidade de carboidratos dependendo do seu nível de atividade física e meta de peso.
+Gorduras: Calculamos a quantidade de gorduras necessárias para manter um bom equilíbrio nutricional."
+            />
+            <CustomAccordion
+              title="A Fit Caloria cria dietas personalizadas?"
+              content="Sim! Além de calcular suas calorias e macronutrientes, oferecemos dietas personalizadas baseadas nas suas necessidades calóricas diárias. Essas dietas são elaboradas automaticamente após o cálculo das calorias, ajudando você a planejar suas refeições de acordo com seus objetivos."
+            />
+            <CustomAccordion
+              title=" O que devo fazer se meu peso estagnar?"
+              content="Se, após algumas semanas, seu peso não mudar (não houver perda ou ganho de peso), sugerimos ajustar sua ingestão calórica em cerca de 200 calorias:
+
+Para ganhar peso: Aumente 200 calorias, preferencialmente de carboidratos.
+Para perder peso: Reduza 200 calorias, diminuindo a ingestão de carboidratos."
+            />
+          </Box>
         </Box>
       </Container>
     </FormProvider>
