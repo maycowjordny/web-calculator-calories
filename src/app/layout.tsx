@@ -11,7 +11,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
   title:
-    "Calculadora de Calorias - Ajuste Sua Dieta para Perder ou Ganhar Peso",
+    "Calculadora de Calorias | Ajuste Sua Dieta para Perder ou Ganhar Peso",
   description:
     "Use nossa calculadora de calorias para calcular seu metabolismo basal, ajustar sua dieta e atingir suas metas de perda ou ganho de peso com ingestão ideal de macronutrientes.",
   keywords: [
@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
+        <link rel="icon" href="/halteres.png" sizes="any" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2978516619638260"

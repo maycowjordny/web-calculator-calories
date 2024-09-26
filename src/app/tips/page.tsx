@@ -2,10 +2,18 @@
 import CustomAccordion from "@/components/custom-acordeon"; // Assumindo que você usa o acordeão
 import Header from "@/components/header"; // Assumindo que você tem o Header como componente global
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import Head from "next/head";
 
 export default function Tips() {
   return (
     <>
+      <Head>
+        <title>Sobre Nós | Meu Site</title>
+        <meta
+          name="description"
+          content="Saiba mais sobre nossa empresa e missão."
+        />
+      </Head>
       <Header />
       <Container maxWidth="md" sx={{ mt: 5, mb: 5 }}>
         <Typography variant="h4" fontWeight="bold" gutterBottom>
