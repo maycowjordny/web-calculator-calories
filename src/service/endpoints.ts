@@ -3,4 +3,11 @@ export const endpoints = {
   gemini: {
     diet: "/api/gemini",
   },
+  stripe: {
+    checkoutCard: "/checkout-card",
+  },
+  mercadoPago: {
+    checkoutPix: "/checkout-pix",
+  },
+  findPaymentSession: "/find-payment-session",
 };

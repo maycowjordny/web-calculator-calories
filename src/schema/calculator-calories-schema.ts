@@ -32,4 +32,7 @@ export const calculatorCaloriesSchema = z.object({
       z.number().min(1, "campo meta de peso é obrigatório"),
     ])
     .refine((val) => !isNaN(val), "Invalid number"),
+  excludedFoods: z
+    .array(z.string())
+    .max(5, "So é permitido colocar 5 alimetos"),
 });

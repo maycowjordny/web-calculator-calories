@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
 type Props = {
   title: string;
   content: string;
