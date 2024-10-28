@@ -35,7 +35,7 @@ export default function Home() {
   );
   const [macros, setMacros] = useState<MacrosProps>({} as MacrosProps);
   const [diet, setDiet] = useState<string>("");
-  const sessionId = localStorage.getItem("sessionId");
+  const [sessionId, setSessionId] = useState<string | null>(null);
 
   const defaultValues = {
     age: 0,
@@ -56,6 +56,15 @@ export default function Home() {
     handleSubmit,
     formState: { isSubmitting, isDirty },
   } = methods;
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedSessionId = localStorage.getItem("sessionId");
+      setSessionId(storedSessionId);
+    }
+  }, []);
+
+  if (!sessionId) return null;
 
   useEffect(() => {
     async function findPaymentSession() {
