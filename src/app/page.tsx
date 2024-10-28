@@ -37,6 +37,11 @@ export default function Home() {
   const [diet, setDiet] = useState<string>("");
   const [sessionId, setSessionId] = useState<string | null>(null);
 
+  useEffect(() => {
+    const storedSessionId = localStorage.getItem("sessionId");
+    setSessionId(storedSessionId);
+  }, []);
+
   const defaultValues = {
     age: 0,
     gender: "male",
@@ -56,15 +61,6 @@ export default function Home() {
     handleSubmit,
     formState: { isSubmitting, isDirty },
   } = methods;
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedSessionId = localStorage.getItem("sessionId");
-      setSessionId(storedSessionId);
-    }
-  }, []);
-
-  if (!sessionId) return null;
 
   useEffect(() => {
     async function findPaymentSession() {
