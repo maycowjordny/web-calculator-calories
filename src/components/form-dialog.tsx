@@ -108,7 +108,7 @@ export default function FormDialog({ isPaidSession }: Props) {
         onClick={handleClickOpen}
         disabled={isPaidSession}
       >
-        Dieta Personalizda R$4,99
+        Dieta Personalizda R$9,99
       </LoadingButton>
       <Dialog
         open={open}
