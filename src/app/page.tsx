@@ -35,7 +35,7 @@ export default function Home() {
   );
   const [macros, setMacros] = useState<MacrosProps>({} as MacrosProps);
   const [diet, setDiet] = useState<string>("");
-  const [sessionId, setSessionId] = useState<string | null>(null);
+  const sessionId = localStorage.getItem("sessionId");
 
   const defaultValues = {
     age: 0,
@@ -66,14 +66,6 @@ export default function Home() {
     }
     findPaymentSession();
   }, [sessionId]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Isso garante que o código só será executado no client-side
-      const storedSessionId = localStorage.getItem("sessionId");
-      setSessionId(storedSessionId);
-    }
-  }, []);
 
   const onSubmit = handleSubmit(async (data: CalculatorCaloriesFormData) => {
     const calories = await calculateCalories(data);
