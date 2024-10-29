@@ -139,7 +139,7 @@ export default function Home() {
           gap={3}
           justifyContent="center"
         >
-          {session?.isPaid && session.paymentType === "CARD" ? (
+          {session?.isPaid && session.paymentType === "CARD" && (
             <Alert severity="success">
               <Typography>
                 Pagamento confirmado! O campo "Retire os alimentos que você não
@@ -153,19 +153,19 @@ export default function Home() {
                 será necessário realizar um novo pagamento.
               </Typography>
             </Alert>
-          ) : null}
+          )}
 
-          {!session?.isPaid && session?.paymentType === "BOLETO" ? (
+          {!session?.isPaid && session?.paymentType === "BOLETO" && (
             <Alert severity="info">
               <Typography>
                 Pagamento feito por boleto demora em média 1 dia para ser
-                processado! Assim que o pagamento for confirmado o campo "Retire
-                os alimentos que você não gosta" será liberado.
+                processado! Assim que o pagamento for confirmado, o campo
+                "Retire os alimentos que você não gosta" será liberado.
               </Typography>
             </Alert>
-          ) : null}
+          )}
 
-          {session?.isPaid && session?.paymentType === "BOLETO" ? (
+          {session?.isPaid && session?.paymentType === "BOLETO" && (
             <Alert severity="success">
               <Typography>
                 Pagamento por boleto confirmado, o campo "Retire os alimentos
@@ -179,7 +179,23 @@ export default function Home() {
                 será necessário realizar um novo pagamento.
               </Typography>
             </Alert>
-          ) : null}
+          )}
+
+          {session?.isPaid && session?.paymentType === "PIX" && (
+            <Alert severity="success">
+              <Typography>
+                Pagamento por Pix confirmado! O campo "Retire os alimentos que
+                você não gosta" foi liberado. Agora você pode ajustar suas
+                preferências e calcular novamente suas calorias para gerar sua
+                dieta personalizada.
+              </Typography>
+              <Typography component="p" mt={2}>
+                <strong>Importante:</strong> O pagamento atual dá direito a uma
+                única dieta personalizada. Para gerar uma nova dieta no futuro,
+                será necessário realizar um novo pagamento.
+              </Typography>
+            </Alert>
+          )}
           <Card sx={{ p: 3 }}>
             <Box
               display="flex"
