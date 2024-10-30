@@ -241,7 +241,7 @@ export default function Home() {
                   disabled={!session?.isPaid}
                   session={session}
                 />
-                <FormDialog isPaidSession={!session?.isPaid} />
+                <FormDialog isPaidSession={session?.isPaid} />
               </Box>
               <RHFSelect name="activity" options={activityOptions} />
               <LoadingButton
